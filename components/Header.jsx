@@ -21,7 +21,7 @@ const Header = () => {
           <ul className="hidden md:flex gap-x-6">
             <li>
               <Link href="/">
-                <p>Ürünler</p>
+                <p>Products</p>
               </Link>
             </li>
             <li>
@@ -31,12 +31,12 @@ const Header = () => {
             </li>
             <li>
               <Link href="/">
-                <p>Aksesuar</p>
+                <p>Accessories</p>
               </Link>
             </li>
             <li>
               <Link href="/">
-                <p>Hakkımızda</p>
+                <p>About Us</p>
               </Link>
             </li>
           </ul>
