@@ -58,7 +58,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="flex items-center gap-3 px-1">
+        <div className="flex items-center gap-8 px-1">
           <Link href="/cart">
             <Image
               className="object-contain"
