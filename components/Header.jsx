@@ -20,29 +20,24 @@ const Header = () => {
         <div>
           <ul className="hidden md:flex gap-x-6">
             <li>
-              <Link href="/">
-                <p>Products</p>
+              <Link href="/collection">
+                <p>Collection</p>
               </Link>
             </li>
             <li>
-              <Link href="/">
-                <p>PVC</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <p>Accessories</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
+              <Link href="/about-us">
                 <p>About Us</p>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact-us">
+                <p>Contact Us</p>
               </Link>
             </li>
           </ul>
         </div>
         <div className="flex items-center gap-3 px-1">
-          <Link href="/">Cart</Link>
+          <Link href="/cart">Cart</Link>
           <Link href="/" className="black_btn">
             Login
           </Link>
