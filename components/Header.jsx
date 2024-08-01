@@ -42,7 +42,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex items-center gap-3 px-1">
-          <Link href="/">Sepet</Link>
+          <Link href="/">Cart</Link>
           <Link href="/" className="black_btn">
             Login
           </Link>
