@@ -42,6 +42,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
+              <Link href="/our-services">
+                <p className="outline_btn">Our Services</p>
+              </Link>
+            </li>
+            <li>
               <Link href="/about-us">
                 <p className="outline_btn">About Us</p>
               </Link>
