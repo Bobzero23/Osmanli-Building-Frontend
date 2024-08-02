@@ -2,20 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CUSTOM CSS */
+.card_hover:hover {
+  /* box-shadow: ; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.orange_hover:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 237 213/ var(--tw-bg-opacity)) /* #fdba74 */;
+  color: #ffffff;
+}
+
+.orange_hover_text:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) /* #ffffff */;
+}
+
+.card_box {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+/* CUSTOM TAILWIND */
 .app {
-    @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+    @apply relative z-10 flex justify-center items-center flex-col mx-auto sm:px-16 px-6;
   }
 
-  .black_btn {
+  .orange_btn {
     @apply  border border-orange-200 bg-orange-700 py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm flex items-center justify-center;
   }
 
-  .black_btn_rounded {
+  .orange_btn_rounded {
     @apply rounded-full border border-orange-200 bg-orange-600 py-1.5 px-5 text-white transition-all hover:bg-orange-300 hover:text-white text-center text-sm flex items-center justify-center;
   }
 
   .flex-center {
     @apply flex justify-center items-center;
+  }
+
+  .glassmorphism {
+    @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  }
+  .side_bar_glassmorphism {
+    @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur;
   }
 
   .head_text {
