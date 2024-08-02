@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="flex gap-2 borderp-2 ">
+    <div className="flex gap-2 borderp-2 mb-3">
       <div className="p-1 md:flex hidden flex-col gap-2 w-[25%]">
         <Link className="glassmorphism orange_hover w-full" href="/">
           <p className="font-extrabold orange_gradient w-full h-full">PVC</p>
@@ -29,7 +29,7 @@ const page = () => {
           </p>
         </Link>
       </div>
-      <div className="text-center flex-center mx-auto glassmorphism my-1 p-1 w-[75%]">
+      <div className="text-center flex-center mx-auto glassmorphism my-1 p-1 md:w-[75%] sm:w-full">
         <ProductList />
       </div>
     </div>
