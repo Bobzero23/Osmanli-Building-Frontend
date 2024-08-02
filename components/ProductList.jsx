@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 
 const ProductList = () => {
   return (
-    <div className=" w-full flex gap-6 flex-wrap flex-center overflow-y-auto h-[calc(100vh-100px)]">
+    <div className="flex gap-5 flex-wrap justify-center w-auto p-2 shrink-1">
       {[
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,

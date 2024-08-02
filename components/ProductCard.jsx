@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ProductCard = () => {
   return (
-    <div className="border border-green-800 p-1">
+    <div className="card_box card_hover p-1">
       <div className="flex flex-col">
         <div className="flex flex-col">
           <Image
@@ -18,7 +18,7 @@ const ProductCard = () => {
         </div>
         <div className="flex items-center justify-between p-2 border border-green-500">
           <div>12,000</div>
-          <button className="black_btn">Add to cart</button>
+          <button className="orange_btn">Add to cart</button>
         </div>
       </div>
     </div>

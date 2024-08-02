@@ -21,9 +21,9 @@ const Cart = () => {
           </div>
 
           <div className="flex-center gap-4">
-            <button className="black_btn_rounded">+</button>
+            <button className="orange_btn_rounded">+</button>
             <span>2</span>
-            <button className="black_btn_rounded">-</button>
+            <button className="orange_btn_rounded">-</button>
           </div>
           <div className="flex justify-between flex-col gap-2">
             <span></span>
@@ -39,7 +39,7 @@ const Cart = () => {
 
 const CartList = () => {
   return (
-    <div className="w-full flex py-2 gap-6 flex-wrap flex-center overflow-y-auto h-[calc(100vh-100px)]">
+    <div className="w-full flex py-2 gap-6 flex-wrap flex-center">
       {[1, 1].map((cart) => (
         <Cart />
       ))}
@@ -47,7 +47,7 @@ const CartList = () => {
       <div className="w-[80%] flex justify-between">
         <div>Total: 234,500</div>
         <div>
-          <button className="black_btn">Order Now</button>
+          <button className="orange_btn">Order Now</button>
         </div>
       </div>
     </div>
