@@ -36,6 +36,11 @@ const Header = () => {
         <div className="">
           <ul className="hidden md:flex">
             <li className="">
+              <Link href="/">
+                <p className="outline_btn ">Home</p>
+              </Link>
+            </li>
+            <li className="">
               <Link href="/collection">
                 <p className="outline_btn ">Collection</p>
               </Link>
