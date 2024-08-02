@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ProductCard = () => {
   return (
-    <div className="card_box card_hover p-1">
+    <div className="card_box card_hover p-1 sm:w-full md:w-auto sm:shrink md:flex">
       <div className="flex flex-col">
         <div className="flex flex-col">
           <Image
@@ -17,7 +17,7 @@ const ProductCard = () => {
           </div>
         </div>
         <div className="card_box flex items-center justify-between p-2">
-          <div className="price_glassmorphism text-green-600 font-bold">
+          <div className="shrink price_glassmorphism text-green-600 font-bold">
             $ 12,000
           </div>
           <button className="orange_btn">Add to cart</button>

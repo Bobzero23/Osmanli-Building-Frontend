@@ -4,7 +4,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="glassmorphism flex flex-col justify-center items-center w-full p-3 gap-2">
+    <div className="glassmorphism mb-2 flex flex-col justify-center items-center w-full p-3 gap-2">
       <div className="w-full hidden md:flex flex-center gap-3 p-1  glassmorphism">
         <span className="orange_gradient font-extrabold text_size">
           OSMANLI
