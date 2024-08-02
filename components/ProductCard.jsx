@@ -16,8 +16,10 @@ const ProductCard = () => {
             <p className="font-thin pt-1">Product name</p>
           </div>
         </div>
-        <div className="flex items-center justify-between p-2 border border-green-500">
-          <div>12,000</div>
+        <div className="card_box flex items-center justify-between p-2">
+          <div className="price_glassmorphism text-green-600 font-bold">
+            $ 12,000
+          </div>
           <button className="orange_btn">Add to cart</button>
         </div>
       </div>

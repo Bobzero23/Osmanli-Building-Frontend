@@ -4,7 +4,7 @@ import Link from "next/link";
 const page = () => {
   return (
     <div className="flex gap-2 borderp-2 ">
-      <div className="md:flex hidden flex-col gap-2 w-[25%]">
+      <div className="p-1 md:flex hidden flex-col gap-2 w-[25%]">
         <Link className="glassmorphism orange_hover w-full" href="/">
           <p className="font-extrabold orange_gradient w-full h-full">PVC</p>
         </Link>
