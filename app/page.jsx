@@ -1,9 +1,37 @@
 import ProductList from "@/components/ProductList";
+import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="w-full text-center border border-pink-500 my-1 p-1">
-      <ProductList />
+    <div className="flex gap-2 borderp-2 ">
+      <div className="md:flex hidden flex-col gap-2 w-[25%]">
+        <Link className="glassmorphism orange_hover w-full" href="/">
+          <p className="font-extrabold orange_gradient w-full h-full">PVC</p>
+        </Link>
+        <Link className="glassmorphism orange_hover w-full" href="/">
+          <p className="font-extrabold orange_gradient w-full h-full">
+            ACCESSORIES
+          </p>
+        </Link>
+        <Link className="glassmorphism orange_hover w-full" href="/">
+          <p className="font-extrabold orange_gradient w-full h-full">
+            HARDWARES
+          </p>
+        </Link>
+        <Link className="glassmorphism orange_hover w-full " href="/">
+          <p className="font-extrabold orange_gradient w-full h-full">
+            SOMETHING
+          </p>
+        </Link>
+        <Link className="glassmorphism orange_hover w-ful" href="/">
+          <p className="font-extrabold orange_gradient w-full h-full">
+            SOMETHING
+          </p>
+        </Link>
+      </div>
+      <div className="text-center flex-center mx-auto glassmorphism my-1 p-1 w-[75%]">
+        <ProductList />
+      </div>
     </div>
   );
 };
