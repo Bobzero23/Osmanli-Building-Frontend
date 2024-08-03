@@ -45,11 +45,11 @@ const Header = () => {
                 <p className="outline_btn ">Collection</p>
               </Link>
             </li>
-            <li className="">
+            {/* <li className="">
               <Link href="/our-services">
                 <p className="outline_btn ">Our Services</p>
               </Link>
-            </li>
+            </li> */}
             <li className="">
               <Link href="/about-us">
                 <p className="outline_btn ">About Us</p>

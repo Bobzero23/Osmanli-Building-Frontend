@@ -28,8 +28,8 @@ const Footer = () => {
         </p>
       </div>
 
-      <ul className="hidden md:flex price_glassmorphism">
-        <li className="">
+      <ul className=" md:flex price_glassmorphism">
+        <li className="list-none">
           <Link href="/">
             <p className="outline_btn ">Home</p>
           </Link>
@@ -39,11 +39,11 @@ const Footer = () => {
             <p className="outline_btn ">Collection</p>
           </Link>
         </li>
-        <li className="">
+        {/* <li className="">
           <Link href="/our-services">
             <p className="outline_btn ">Our Services</p>
           </Link>
-        </li>
+        </li> */}
         <li className="">
           <Link href="/about-us">
             <p className="outline_btn ">About Us</p>
