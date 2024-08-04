@@ -72,7 +72,7 @@ const Header = () => {
               src="/assets/icons/cart.png"
             />
           </Link>
-          <Link href="/" className="orange_btn_rounded flex-shrink">
+          <Link href="/sign-in" className="orange_btn_rounded flex-shrink">
             Login
           </Link>
         </div>
