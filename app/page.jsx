@@ -20,7 +20,7 @@ const page = () => {
         </Link>
         <Link className="glassmorphism orange_hover w-full " href="/">
           <p className="font-extrabold orange_gradient w-full h-full">
-            SOMETHING
+            GLASSWARE
           </p>
         </Link>
         <Link className="glassmorphism orange_hover w-ful" href="/">
