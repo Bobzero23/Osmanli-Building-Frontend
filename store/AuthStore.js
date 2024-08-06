@@ -33,6 +33,10 @@ const authStore = create((set) => ({
       set({ error: error, loading: false });
     }
   },
+  logout: () => {
+    set({ loggedIn: false, user: null, error: null });
+    localStorage.removeItem("jwt");
+  },
 }));
 
 export default authStore;
