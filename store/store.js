@@ -22,6 +22,17 @@ const authStore = create((set) => ({
       set({ error: error, loading: false });
     }
   },
+  signup: async (userData) => {
+    set({ loading: true });
+
+    try {
+      const { data } = await axios.post(`${BASE_URL}auth/signup`, userData);
+      set({ loggedIn: true, error: null, loading: null });
+      return data;
+    } catch (error) {
+      set({ error: error, loading: false });
+    }
+  },
 }));
 
 export default authStore;
