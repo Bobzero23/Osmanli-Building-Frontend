@@ -16,8 +16,15 @@ const authStore = create((set) => ({
     try {
       const { data } = await axios.post(`${BASE_URL}auth/signin`, userData);
       localStorage.setItem("jwt", data.jwt);
-      set({ loading: false, loggedIn: true, jwt: data.jwt });
-      return data;
+      if (data.status === true) {
+        set({
+          loading: false,
+          loggedIn: true,
+          jwt: data.jwt,
+          userId: data.userId,
+        });
+        return data;
+      }
     } catch (error) {
       set({ error: error, loading: false });
     }
@@ -27,8 +34,15 @@ const authStore = create((set) => ({
 
     try {
       const { data } = await axios.post(`${BASE_URL}auth/signup`, userData);
-      set({ loggedIn: true, error: null, loading: null });
-      return data;
+      if (data.status === true) {
+        set({
+          loggedIn: true,
+          error: null,
+          loading: null,
+          userId: data.userId,
+        });
+        return data;
+      }
     } catch (error) {
       set({ error: error, loading: false });
     }
