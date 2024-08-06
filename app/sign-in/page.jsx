@@ -30,6 +30,8 @@ const Signin = () => {
       setTimeout(() => {
         route.push("/");
       }, 1000); // Adjust the delay time as needed
+    } else {
+      toast.error("Invalid username or password");
     }
   };
 
