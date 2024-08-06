@@ -1,8 +1,9 @@
 "use client";
-import authStore from "@/store/store";
+import authStore from "@/store/AuthStore";
 import { Button, TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignUp = () => {
   const route = useRouter();
@@ -26,12 +27,15 @@ const SignUp = () => {
     e.preventDefault();
     const result = await signup(formData);
     if (result) console.log(result);
-    route.push("/");
+    toast.success("Registered successfully!!");
+    setTimeout(() => {
+      route.push("/");
+    }, 1000);
   };
 
   return (
     <>
-      <div className="flex items-center justify-center h-screen px-3">
+      <div className="flex items-center justify-center h-auto px-3">
         <div>
           <h1 className="text-lg font-bold text-center pb-8">SIGN UP</h1>
           <form className="space-y-3">
@@ -75,6 +79,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </>
   );
 };

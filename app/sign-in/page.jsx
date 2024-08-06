@@ -1,9 +1,10 @@
 "use client";
-import authStore from "@/store/store";
+import authStore from "@/store/AuthStore";
 import { Button, TextField } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Signin = () => {
   const route = useRouter();
@@ -24,16 +25,20 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await login(formData);
-    if (result) console.log(result);
-    route.push("/");
+    if (result) {
+      toast.success("Logged in successfully!!");
+      setTimeout(() => {
+        route.push("/");
+      }, 1000); // Adjust the delay time as needed
+    }
   };
 
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-auto">
         <div>
           <h1 className="text-lg font-bold text-center pb-8">SIGN IN</h1>
-          <form className="space-y-3">
+          <form className="space-y-3" onSubmit={handleSubmit}>
             <TextField
               fullWidth
               name="email"
@@ -49,12 +54,7 @@ const Signin = () => {
               onChange={hanldeChange}
             />
             <div>
-              <Button
-                fullWidth
-                type="submit"
-                variant="contained"
-                onClick={handleSubmit}
-              >
+              <Button fullWidth type="submit" variant="contained">
                 SIGNIN
               </Button>
             </div>
@@ -67,6 +67,7 @@ const Signin = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </>
   );
 };
