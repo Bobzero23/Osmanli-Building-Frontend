@@ -10,6 +10,7 @@ const Header = () => {
   const route = useRouter();
   const logout = authStore((state) => state.logout);
   const isLoggedIn = authStore((state) => state.loggedIn);
+  const user = authStore((state) => state.user);
 
   const hanldeLogout = () => {
     logout();
@@ -36,72 +37,141 @@ const Header = () => {
         </span>
       </div>
       {/* Desktop Navigation */}
-      <div className="flex items-center justify-between w-full glassmorphism">
-        <div className="px-1">
-          <Link href="/">
-            <Image
-              className="object-contain"
-              alt="Product image"
-              width={40}
-              height={40}
-              src="/assets/images/logo.png"
-            />
-          </Link>
+      {user === "admin" ? (
+        <div className="flex items-center justify-between w-full glassmorphism">
+          <div className="px-1">
+            <Link href="/">
+              <Image
+                className="object-contain"
+                alt="Product image"
+                width={40}
+                height={40}
+                src="/assets/images/logo.png"
+              />
+            </Link>
+          </div>
+          <div className="">
+            <ul className="hidden md:flex">
+              <li className="">
+                <Link href="/">
+                  <p className="outline_btn ">All Products</p>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/">
+                  <p className="outline_btn ">Add Product</p>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/collection">
+                  <p className="outline_btn ">Orders</p>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/our-services">
+                  <p className="outline_btn ">Users</p>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/our-services">
+                  <p className="outline_btn ">Messages</p>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center gap-8 px-1">
+            <Link href="/cart">
+              <Image
+                className="object-contain"
+                alt="Product image"
+                width={30}
+                height={30}
+                src="/assets/icons/cart.png"
+              />
+            </Link>
+            {isLoggedIn ? (
+              <Link
+                href="/"
+                className="orange_btn_rounded flex-shrink"
+                onClick={hanldeLogout}
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link href="/sign-in" className="orange_btn_rounded flex-shrink">
+                Login
+              </Link>
+            )}
+          </div>
         </div>
-        <div className="">
-          <ul className="hidden md:flex">
-            <li className="">
-              <Link href="/">
-                <p className="outline_btn ">Home</p>
-              </Link>
-            </li>
-            <li className="">
-              <Link href="/collection">
-                <p className="outline_btn ">Collection</p>
-              </Link>
-            </li>
-            {/* <li className="">
+      ) : (
+        <div className="flex items-center justify-between w-full glassmorphism">
+          <div className="px-1">
+            <Link href="/">
+              <Image
+                className="object-contain"
+                alt="Product image"
+                width={40}
+                height={40}
+                src="/assets/images/logo.png"
+              />
+            </Link>
+          </div>
+          <div className="">
+            <ul className="hidden md:flex">
+              <li className="">
+                <Link href="/">
+                  <p className="outline_btn ">Home</p>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/collection">
+                  <p className="outline_btn ">Collection</p>
+                </Link>
+              </li>
+              {/* <li className="">
               <Link href="/our-services">
                 <p className="outline_btn ">Our Services</p>
               </Link>
             </li> */}
-            <li className="">
-              <Link href="/about-us">
-                <p className="outline_btn ">About Us</p>
-              </Link>
-            </li>
-            <li className="">
-              <Link href="/contact-us">
-                <p className="outline_btn ">Contact Us</p>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="flex items-center gap-8 px-1">
-          <Link href="/cart">
-            <Image
-              className="object-contain"
-              alt="Product image"
-              width={30}
-              height={30}
-              src="/assets/icons/cart.png"
-            />
-          </Link>
-          {isLoggedIn ? (
-            <Link
-              href="/"
-              className="orange_btn_rounded flex-shrink"
-              onClick={hanldeLogout}
-            >
-              Logout
+              <li className="">
+                <Link href="/about-us">
+                  <p className="outline_btn ">About Us</p>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/contact-us">
+                  <p className="outline_btn ">Contact Us</p>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center gap-8 px-1">
+            <Link href="/cart">
+              <Image
+                className="object-contain"
+                alt="Product image"
+                width={30}
+                height={30}
+                src="/assets/icons/cart.png"
+              />
             </Link>
-          ) : (
-            <Link href="/sign-in" className="orange_btn_rounded flex-shrink">
-              Login
-            </Link>
-          )}
+            {isLoggedIn ? (
+              <Link
+                href="/"
+                className="orange_btn_rounded flex-shrink"
+                onClick={hanldeLogout}
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link href="/sign-in" className="orange_btn_rounded flex-shrink">
+                Login
+              </Link>
+            )}
+          </div>
         </div>
-      </div>
+      )}
       {/* TODO - Mobile Navigation */}
       <Toaster />
     </div>
