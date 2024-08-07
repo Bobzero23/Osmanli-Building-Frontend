@@ -1,6 +1,7 @@
 "use client";
 import authStore from "@/store/AuthStore";
 import { Button, TextField } from "@mui/material";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -75,7 +76,9 @@ const SignUp = () => {
           </form>
           <div>
             <span>Already have an account? </span>
-            <Button>signin</Button>
+            <Link href="/sign-in" className="text-blue-700">
+              Log in
+            </Link>
           </div>
         </div>
       </div>
