@@ -8,6 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const Signin = () => {
   const route = useRouter();
+  const user = authStore((state) => state.user);
   const login = authStore((state) => state.login);
   const [formData, setformData] = useState({
     email: "",
@@ -25,8 +26,14 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await login(formData);
+
     if (result) {
-      toast.success("Logged in successfully!!");
+      {
+        result.role == "admin"
+          ? toast.success("Welcome back sir.")
+          : toast.success("Logged in successfully.");
+      }
+
       setTimeout(() => {
         route.push("/");
       }, 1000); // Adjust the delay time as needed

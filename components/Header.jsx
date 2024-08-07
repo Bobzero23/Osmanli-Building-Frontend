@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import authStore from "@/store/AuthStore";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -10,11 +10,10 @@ const Header = () => {
   const route = useRouter();
   const logout = authStore((state) => state.logout);
   const isLoggedIn = authStore((state) => state.loggedIn);
-  console.log(isLoggedIn);
 
   const hanldeLogout = () => {
     logout();
-    toast.success("Signed out successfully!!");
+    toast.success("Signed out successfully.");
     setTimeout(() => {
       route.push("/");
     }, 1000);
