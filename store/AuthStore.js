@@ -3,7 +3,7 @@ import axios from "axios";
 import { create } from "zustand";
 
 const authStore = create((set) => ({
-  user: null,
+  user: "",
   userId: null,
   loggedIn: false,
   loading: false,
@@ -16,12 +16,14 @@ const authStore = create((set) => ({
     try {
       const { data } = await axios.post(`${BASE_URL}auth/signin`, userData);
       localStorage.setItem("jwt", data.jwt);
+
       if (data.status === true) {
         set({
           loading: false,
           loggedIn: true,
           jwt: data.jwt,
           userId: data.userId,
+          user: data.role,
         });
         return data;
       }
@@ -41,6 +43,7 @@ const authStore = create((set) => ({
           loading: null,
           userId: data.userId,
         });
+        if (data.role === "admin") set({ user: "admin" });
         return data;
       }
     } catch (error) {
