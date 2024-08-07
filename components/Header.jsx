@@ -92,13 +92,13 @@ const Header = () => {
             {isLoggedIn ? (
               <Link
                 href="/"
-                className="orange_btn_rounded flex-shrink"
+                className="orange_btn_rounded"
                 onClick={hanldeLogout}
               >
                 Logout
               </Link>
             ) : (
-              <Link href="/sign-in" className="orange_btn_rounded flex-shrink">
+              <Link href="/sign-in" className="orange_btn_rounded ">
                 Login
               </Link>
             )}
