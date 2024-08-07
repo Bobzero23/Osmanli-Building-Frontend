@@ -58,22 +58,22 @@ const Header = () => {
                 </Link>
               </li>
               <li className="">
-                <Link href="/">
+                <Link href="/add-product">
                   <p className="outline_btn ">Add Product</p>
                 </Link>
               </li>
               <li className="">
-                <Link href="/collection">
+                <Link href="/orders">
                   <p className="outline_btn ">Orders</p>
                 </Link>
               </li>
               <li className="">
-                <Link href="/our-services">
+                <Link href="/users">
                   <p className="outline_btn ">Users</p>
                 </Link>
               </li>
               <li className="">
-                <Link href="/our-services">
+                <Link href="/messages">
                   <p className="outline_btn ">Messages</p>
                 </Link>
               </li>
