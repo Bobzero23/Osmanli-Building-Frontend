@@ -16,6 +16,7 @@ const authStore = create((set) => ({
     try {
       const { data } = await axios.post(`${BASE_URL}auth/signin`, userData);
       localStorage.setItem("jwt", data.jwt);
+      localStorage.setItem("user", data.role);
 
       if (data.status === true) {
         set({
