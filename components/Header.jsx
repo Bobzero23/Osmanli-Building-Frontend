@@ -10,7 +10,14 @@ const Header = () => {
   const route = useRouter();
   const logout = authStore((state) => state.logout);
   const isLoggedIn = authStore((state) => state.loggedIn);
-  const user = authStore((state) => state.user);
+  const user = localStorage.getItem("user");
+
+  const initialize = authStore((state) => state.initialize);
+
+  // Call the initialize function when the component mountss
+  useEffect(() => {
+    initialize();
+  }, [initialize]);
 
   const hanldeLogout = () => {
     logout();
@@ -19,9 +26,10 @@ const Header = () => {
       route.push("/");
     }, 1000);
   };
+
   return (
     <div className="glassmorphism mb-2 flex flex-col justify-center items-center w-full p-3 gap-2">
-      <div className="w-full hidden md:flex flex-center gap-3 p-1  glassmorphism">
+      <div className="w-full hidden md:flex flex-center gap-3 p-1 glassmorphism">
         <span className="orange_gradient font-extrabold text_size">
           OSMANLI
         </span>
@@ -129,11 +137,6 @@ const Header = () => {
                   <p className="outline_btn ">Collection</p>
                 </Link>
               </li>
-              {/* <li className="">
-              <Link href="/our-services">
-                <p className="outline_btn ">Our Services</p>
-              </Link>
-            </li> */}
               <li className="">
                 <Link href="/about-us">
                   <p className="outline_btn ">About Us</p>
@@ -172,7 +175,6 @@ const Header = () => {
           </div>
         </div>
       )}
-      {/* TODO - Mobile Navigation */}
       <Toaster />
     </div>
   );
