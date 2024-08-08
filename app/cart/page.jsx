@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <div className="w-full my-1 flex card_box card_hover">
       <div className="card_box p-2 border border-black-800 w-full ">
-        <div className="w-full flex justify-between">
+        <div className="w-full sm:w-auto flex sm:flex-row flex-col justify-between">
           <div>
             <Image
               className="object-cover"
@@ -38,10 +38,10 @@ const Cart = () => {
 
 const CartList = () => {
   return (
-    <div className="flex gap-3">
+    <div className="md:flex-nowrap flex flex-wrap gap-3">
       <div className="glassmorphism w-full py-2 gap-6 flex-wrap flex-center md:w-[70%]">
-        {[1, 1].map((cart) => (
-          <Cart />
+        {[1, 1].map((cart, i) => (
+          <Cart key={i} />
         ))}
       </div>
       <div className="flex flex-col h-[12rem] md:w-[30%] glassmorphism gap-7">

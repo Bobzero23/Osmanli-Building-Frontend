@@ -3,8 +3,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="flex gap-2 glassmorphism">
-      <div className="w-[50%] glassmorphism">
+    <div className="md:flex xl:flex-row w-full flex-col gap-2 m-auto glassmorphism">
+      <div className="xl:w-[50%] w-full glassmorphism">
         <div className="flex flex-col">
           <h4 className="font-semibold text-orange-900">How it started</h4>
           <div className="border-t border-t-red-600 w-[5rem] h-1 mb-4"></div>
@@ -27,22 +27,11 @@ const AboutUs = () => {
             voluptatem, placeat, sit quis aperiam. Lorem ipsum dolor sit amet
             consectetur, adipisicing elit. Placeat, laudantium praesentium
             repudiandae pariatur assumenda reprehenderit cupiditate deserunt
-            quae eum, sunt illum necessitatibus? Ipsum autem eaque blanditiis
-            repudiandae sint earum quis! Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Quo atque culpa impedit perferendis quidem. Autem
-            rem soluta architecto officia nesciunt neque asperiores facilis eius
-            rerum voluptatem, placeat, sit quis aperiam. Lorem ipsum dolor sit
-            amet consectetur, adipisicing elit. Placeat, laudantium praesentium
-            repudiandae pariatur assumenda reprehenderit cupiditate deserunt
-            quae eum, sunt illum necessitatibus? Ipsum autem eaque blanditiis
-            repudiandae sint earum quis!Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Quo atque culpa impedit perferendis quidem. Autem
-            rem soluta architecto officia nesciunt neque asperiores facilis eius
-            rerum voluptatem, placeat, sit quis aperiam.
+            quae eum, sunt illum necessitatibus?
           </p>
         </div>
       </div>
-      <div className="w-[50%] flex flex-col gap-3 glassmorphism">
+      <div className="xl:w-[50%] w-full flex flex-col gap-3 glassmorphism">
         <div>
           <Image
             className="object-cover"

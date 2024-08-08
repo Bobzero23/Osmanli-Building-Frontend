@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "@mui/material";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import XIcon from "@mui/icons-material/X";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import InstagramIcon from "@mui/icons-material/Instagram";
+// import XIcon from "@mui/icons-material/X";
 
 const Footer = () => {
   return (
     <div className="flex-center flex-col pb-5 mt-4 gap-2 w-full h-auto bg-gradient-to-r from-orange-400 via-red-200 to-orange-400">
       <div className="gap-2">
-        <h1 className="head_text orange_gradient w-full flex-center">
+        <h1 className="hidden lg:block head_text orange_gradient w-full sm:flex-center">
           GET IN TOUCH WITH US
         </h1>
 
@@ -40,7 +40,8 @@ const Footer = () => {
           </li>
         </ul>
         <div className="flex-center w-full gap-3 ">
-          <Link href="/">
+          {/* TODO - uncomment this  */}
+          {/* <Link href="/">
             <WhatsAppIcon />
           </Link>
           <Link href="/">
@@ -48,7 +49,7 @@ const Footer = () => {
           </Link>
           <Link href="/">
             <XIcon />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
