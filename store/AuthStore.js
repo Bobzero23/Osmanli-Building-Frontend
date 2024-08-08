@@ -1,6 +1,6 @@
-import { api, BASE_URL } from "@/api/api";
-import axios from "axios";
 import { create } from "zustand";
+import axios from "axios";
+import { BASE_URL } from "@/api/api";
 
 const authStore = create((set) => ({
   user: "",
@@ -54,6 +54,14 @@ const authStore = create((set) => ({
   logout: () => {
     set({ loggedIn: false, user: null, error: null });
     localStorage.removeItem("jwt");
+  },
+
+  // Added the initialize function to check localStorage for jwt
+  initialize: () => {
+    const jwt = localStorage.getItem("jwt");
+    if (jwt) {
+      set({ loggedIn: true, jwt: jwt });
+    }
   },
 }));
 
