@@ -53,7 +53,7 @@ const authStore = create((set) => ({
   },
   logout: () => {
     set({ loggedIn: false, user: null, error: null });
-    localStorage.removeItem("jwt");
+    localStorage.clear();
   },
 
   // Added the initialize function to check localStorage for jwt
