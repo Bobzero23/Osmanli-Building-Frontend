@@ -5,21 +5,9 @@ import PlaceIcon from "@mui/icons-material/Place";
 
 const ContactUs = () => {
   return (
-    <div className="w-full flex flex-col gap-2 glassmorphism">
-      <div className="flex w-full gap-2 glassmorphism">
-        <div className="w-[50%]">
-          <form className="w-full flex flex-col gap-5">
-            <div className="flex gap-2 justify-between">
-              <TextField className="w-[50%]" required label="First name" />
-              <TextField className="w-[50%]" required label="Last name" />
-            </div>
-            <TextField required type="emial" label="Email" />
-            <TextField required type="number" label="Phone" />
-            <TextField required label="Message" />
-            <button className="w-full orange_btn">SEND</button>
-          </form>
-        </div>
-        <div className="flex flex-col w-[50%] glassmorphism gap-2">
+    <div className="w-full flex flex-col gap-2 ">
+      <div className="lg:flex lg:flex-row flex-col w-full gap-2 ">
+        <div className="flex flex-col lg:w-[50%] w-full glassmorphism gap-2">
           <div className="glassmorphism">
             <h4 className="font-semibold text-orange-900">How it started</h4>
             <p className="mt-2">
@@ -46,6 +34,18 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="lg:m-auto w-full lg:w-[50%]">
+          <form className="w-full flex flex-col gap-5">
+            <div className="flex gap-2 justify-between">
+              <TextField className="w-[50%]" required label="First name" />
+              <TextField className="w-[50%]" required label="Last name" />
+            </div>
+            <TextField required type="emial" label="Email" />
+            <TextField required type="number" label="Phone" />
+            <TextField required label="Message" />
+            <button className="w-full orange_btn">SEND</button>
+          </form>
         </div>
       </div>
       <div>
