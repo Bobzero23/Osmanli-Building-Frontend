@@ -9,7 +9,9 @@ const ContactUs = () => {
       <div className="lg:flex lg:flex-row flex-col w-full gap-2 ">
         <div className="flex flex-col lg:w-[50%] w-full glassmorphism gap-2">
           <div className="glassmorphism">
-            <h4 className="font-semibold text-orange-900">How it started</h4>
+            <h4 className="font-semibold text-orange-900">
+              We would love to hear from you !!
+            </h4>
             <p className="mt-2">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
               atque culpa impedit perferendis quidem. Autem rem soluta
