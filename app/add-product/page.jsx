@@ -2,13 +2,15 @@
 import { Button, TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { BASE_URL } from "@/api/api";
 
 const AddProduct = () => {
   const route = useRouter();
 
   const [formData, setformData] = useState({
-    image: "",
+    image: null, // Use null instead of an empty string for the image
     name: "",
     description: "",
     price: 0,
@@ -23,14 +25,50 @@ const AddProduct = () => {
     });
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setformData({
+        ...formData,
+        image: file,
+      });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await signup(formData);
-    if (result) console.log(result);
-    toast.success("Registered successfully!!");
-    setTimeout(() => {
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("image", formData.image);
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("description", formData.description);
+    formDataToSend.append("price", formData.price);
+    formDataToSend.append(
+      "totalProductsInStock",
+      formData.totalProductsInStock
+    );
+
+    // Log each form data entry to ensure it's being added
+    for (let pair of formDataToSend.entries()) {
+      console.log(pair[0] + ": " + pair[1]);
+    }
+
+    try {
+      const result = await axios.post(
+        `${BASE_URL}product/add`,
+        formDataToSend,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      toast.success("Product added successfully!");
       route.push("/");
-    }, 1000);
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to add product!");
+    }
   };
 
   return (
@@ -38,7 +76,7 @@ const AddProduct = () => {
       <div className="flex items-center justify-center h-auto px-3">
         <div>
           <form className="space-y-3">
-            <input type="file" />
+            <input type="file" name="image" onChange={handleFileChange} />
             <TextField
               fullWidth
               required
