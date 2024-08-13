@@ -22,7 +22,7 @@ const page = () => {
         ))}
       </div>
 
-      <div className="text-center flex-center mx-auto glassmorphism my-1 p-1 md:w-[75%] sm:w-full">
+      <div className="text-center flex-center w-full glassmorphism my-1 p-1 md:w-[75%] sm:w-full">
         {/* TODO - add a prop here to display categor in the product list page */}
         <ProductList />
       </div>
