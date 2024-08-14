@@ -11,7 +11,7 @@ const sideBar = [
 
 const page = () => {
   return (
-    <div className="p-0 flex gap-2 borderp-2 mb-3">
+    <div className="p-0 flex gap-2 borderp-2">
       <div className="p-1 md:flex hidden flex-col gap-2 w-[25%]">
         {sideBar.map((sideItem, i) => (
           <Link key={i} className="glassmorphism orange_hover w-full" href="/">
