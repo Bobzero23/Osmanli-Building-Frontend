@@ -30,7 +30,7 @@ const SignUp = () => {
     if (result) console.log(result);
     toast.success("Registered successfully!!");
     setTimeout(() => {
-      route.push("/");
+      route.push("/sign-in");
     }, 1000);
   };
 
